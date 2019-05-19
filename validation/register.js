@@ -6,6 +6,8 @@ module.exports = function validateRegisterInput(data) {
 	// Convert empty fields to an empty string
 	data.name = !isEmpty(data.name) ? data.name : '';
 	data.email = !isEmpty(data.email) ? data.email : '';
+	data.grade = !isEmpty(data.grade) ? data.grade : '';
+	data.school = !isEmpty(data.school) ? data.school : '';
 	data.password = !isEmpty(data.password) ? data.password : '';
 	data.password2 = !isEmpty(data.password2) ? data.password2 : '';
 
@@ -20,6 +22,7 @@ module.exports = function validateRegisterInput(data) {
 	} else if (!Validator.isEmail(data.email)) {
 		errors.email = 'Email is invalid';
 	}
+
 	// Password checks
 	if (Validator.isEmpty(data.password)) {
 		errors.password = 'Password is required';
