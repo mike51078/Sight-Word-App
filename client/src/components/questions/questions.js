@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Questions extends Component {
 	onLogoutClick = (e) => {
@@ -16,8 +17,20 @@ class Questions extends Component {
 					<div className="col s12 center-align">
 						<h4>Questions Page</h4>
 						<h4>{user.name.split(' ')[0]} please choose an option from below.</h4>
-						<div className="col s6" />
-						<div className="col s6" />
+
+						<div>
+							<Link
+								to="/TestPage"
+								style={{
+									width: '250px',
+									borderRadius: '3px',
+									letterSpacing: '1.5px'
+								}}
+								className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+							>
+								Go To Test
+							</Link>
+						</div>
 						<button
 							style={{
 								width: '150px',
