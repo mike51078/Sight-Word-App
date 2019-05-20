@@ -56,7 +56,7 @@ class App extends Component {
 							<PrivateRoute exact path="/contact" componenet={Contact} />
 							<PrivateRoute exact path="/about" componenet={About} />
 							<PrivateRoute exact path="/testPage" componenet={TestPage} />
-							<PrivateRoute exact path="/restResults" componenet={TestResults} />
+							<PrivateRoute exact path="/testResults" componenet={TestResults} />
 						</Switch>
 					</div>
 				</Router>

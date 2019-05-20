@@ -14,7 +14,7 @@ class Contact extends Component {
 			<div style={{ height: '75vh' }} className="container valign-wrapper">
 				<div className="row">
 					<div className="col s12 center-align">
-						<h4>Questions Page</h4>
+						<h4>Contact Page</h4>
 						<h4>{user.name.split(' ')[0]} please choose an option from below.</h4>
 						<div className="col s6" />
 						<div className="col s6" />
