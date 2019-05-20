@@ -3,11 +3,36 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
 
+// const SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+// const recognition = new SpeechRecognition()
+
+// recognition.continous = true
+// recognition.interimResults = true
+
 class TestPage extends Component {
 	onLogoutClick = (e) => {
 		e.preventDefault();
 		this.props.logoutUser();
 	};
+
+	// constructor() {
+	// 	super()
+	// 	this.state = {
+	// 	  listening: false
+	// 	}
+	// 	this.toggleListen = this.toggleListen.bind(this)
+	// 	this.handleListen = this.handleListen.bind(this)
+	//   }
+
+	//   toggleListen() {
+	// 	this.setState({
+	// 	  listening: !this.state.listening
+	// 	}, this.handleListen)
+	//   }
+
+	//   handleListen(){
+	//   };
+
 	render() {
 		const { user } = this.props.auth;
 		return (
