@@ -8,9 +8,13 @@ import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Questions from './components/questions/questions';
+import Contact from './components/Contact/contact';
+import About from './components/About/about';
 import Results from './components/results/results';
 import PrivateRoute from './components/private-route/PrivateRoute';
 import Dashboard from './components/dashboard/Dashboard';
+import TestPage from './components/TestPage/testPage';
+import TestResults from './components/TestResults/testResults';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { Provider } from 'react-redux';
 
@@ -46,6 +50,11 @@ class App extends Component {
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/questions" component={Questions} />
 						<Route exact path="/results" component={Results} />
+						<Route exact path="/contact" componenet={Contact} />
+						<Route exact path="/about" componenet={About} />
+						<Route exact path="/testPage" componenet={TestPage} />
+						<Route exact path="/restResults" componenet={TestResults} />
+						}
 						<Switch>
 							<PrivateRoute exact path="/dashboard" component={Dashboard} />
 						</Switch>

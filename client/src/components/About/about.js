@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
 
-class Results extends Component {
+class About extends Component {
 	onLogoutClick = (e) => {
 		e.preventDefault();
 		this.props.logoutUser();
@@ -14,8 +14,8 @@ class Results extends Component {
 			<div style={{ height: '75vh' }} className="container valign-wrapper">
 				<div className="row">
 					<div className="col s12 center-align">
-						<h4>Results Page</h4>
-						<h4>{user.name.split(' ')[0]} please select one of the options below.</h4>
+						<h4>About Page</h4>
+						<h4>{user.name.split(' ')[0]} please choose an option from below.</h4>
 						<div className="col s6" />
 						<div className="col s6" />
 						<button
@@ -37,11 +37,11 @@ class Results extends Component {
 	}
 }
 
-Results.propTypes = {
+About.propTypes = {
 	logoutUser: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired
 };
 const mapStateToProps = (state) => ({
 	auth: state.auth
 });
-export default connect(mapStateToProps, { logoutUser })(Results);
+export default connect(mapStateToProps, { logoutUser })(About);
