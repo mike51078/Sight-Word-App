@@ -6,6 +6,7 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 const port = process.env.PORT || 5000;
 const db = require('./config/keys').mongoURI;
+// const routes = require('./routes');
 
 // Middleware
 app.use(
