@@ -22,6 +22,7 @@
 	},
 	"homepage": "https://github.com/mike51078/Sight-Word-App#readme",
 	"dependencies": {
+		"axios": "^0.18.0",
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.19.0",
 		"concurrently": "^4.1.0",
@@ -31,6 +32,7 @@
 		"mongoose": "^5.5.9",
 		"passport": "^0.4.0",
 		"passport-jwt": "^4.0.0",
+		"react-materialize": "^3.3.1",
 		"validator": "^10.11.0"
 	},
 	"devDependencies": {
