@@ -5,7 +5,11 @@ const db = require('../models');
 
 module.exports = {
 	q1: function(req, res) {
-		db.sightWords.findAll({});
+		db.sightWords.findAll({
+			where: {
+				section: '1'
+			}
+		});
 	}
 		.then((results) => res.status(200).json(results))
 		.catch((err) => res.status(422).json(err))

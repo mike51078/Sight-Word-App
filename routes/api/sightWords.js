@@ -1,7 +1,15 @@
-const router = require('express').Router();
-const SightWordController = require('../../controllers/SightWordController');
+const express = require('express');
+const Router = express.Router();
+let SightWords = require('../../models/SightWords');
 
-// Matches with "/api/books"
-router.route('/:sightWords').get(SightWordController.findAll);
+router.route('/').get(function(req, res) {
+	sightWords.find(function(err, sightWords) {
+		if (err) {
+			console.log(err);
+		} else {
+			res.json(sightWords);
+		}
+	});
+});
 
-module.exports = router;
+module.exports = Router;

@@ -3,13 +3,14 @@ const Schema = mongoose.Schema;
 
 // Creating Schema
 const UserWordsSchema = new Schema({
-	word: {
+	listName: {
 		type: String,
 		required: true
 	},
-	section: {
+	word: {
 		type: String,
 		required: true
 	}
 });
-module.exports = UserWords = mongoose.model('users', UserWordsSchema);
+
+module.exports = UserWords = mongoose.model('userWords', UserWordsSchema);

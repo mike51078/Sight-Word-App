@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Navbar2 from '../layout/Navbar2';
 
 class TestPage extends Component {
@@ -9,7 +10,6 @@ class TestPage extends Component {
 		e.preventDefault();
 		this.props.logoutUser();
 	};
-
 	render() {
 		const { user } = this.props.auth;
 		return (
@@ -20,10 +20,21 @@ class TestPage extends Component {
 				<div style={{ height: '75vh' }} className="container valign-wrapper">
 					<div className="row">
 						<div className="col s12 center-align">
-							<h4>Test Page</h4>
-							<h4>{user.name.split(' ')[0]} please select one of the options below.</h4>
-							<div className="col s6" />
-							<div className="col s6" />
+							<h4>TestPage Page</h4>
+							<h4>{user.name.split(' ')[0]} please choose an option from below.</h4>
+							<div>
+								<Link
+									to="/TestPage"
+									style={{
+										width: '250px',
+										borderRadius: '3px',
+										letterSpacing: '1.5px'
+									}}
+									className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+								>
+									Go To Test
+								</Link>
+							</div>
 							<button
 								style={{
 									width: '150px',
