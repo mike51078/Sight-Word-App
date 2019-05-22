@@ -4,12 +4,36 @@ import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Navbar2 from '../layout/Navbar2';
+import Jumbotron from '../jumbotron/jumbotron';
+import api from '../../utils/api';
 
 class TestPage extends Component {
 	onLogoutClick = (e) => {
 		e.preventDefault();
 		this.props.logoutUser();
 	};
+	state = {
+		sightWords: [],
+		section: '',
+		userWords: [],
+		listName: []
+	};
+
+	componentDidMount() {
+		this.getSightWords();
+	}
+
+	getSightWords = () => {
+		api
+			.getSightWords()
+			.then((res) =>
+				this.setState({
+					sightWords: res.data
+				})
+			)
+			.catch((err) => console.log(err));
+	};
+
 	render() {
 		const { user } = this.props.auth;
 		return (
