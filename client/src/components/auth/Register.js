@@ -53,7 +53,7 @@ class Register extends Component {
 		const { errors } = this.state;
 
 		return (
-			<div className="main">
+			<div className="body">
 				<header>
 					<Navbar />
 				</header>

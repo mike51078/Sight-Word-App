@@ -52,7 +52,7 @@ class Login extends Component {
 	render() {
 		const { errors } = this.state;
 		return (
-			<div className="main">
+			<div className="body">
 				<header>
 					<Navbar />
 				</header>

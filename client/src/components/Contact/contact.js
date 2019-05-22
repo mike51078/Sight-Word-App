@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
-import Navbar2 from '../layout/Navbar2';
+import Navbar from '../layout/Navbar';
 import './contact.css';
 
 class Contact extends Component {
@@ -15,7 +15,7 @@ class Contact extends Component {
 		return (
 			<div className="main">
 				<header>
-					<Navbar2 />
+					<Navbar />
 				</header>
 				<div style={{ height: '75vh' }} className="container valign-wrapper">
 					<div className="row">

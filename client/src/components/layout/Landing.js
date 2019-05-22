@@ -6,7 +6,7 @@ import './landing.css';
 class Landing extends Component {
 	render() {
 		return (
-			<div className="main">
+			<div className="body">
 				<header>
 					<Navbar />
 				</header>

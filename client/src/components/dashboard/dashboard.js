@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { Link } from 'react-router-dom';
-import Navbar2 from '../layout/Navbar2';
+import Navbar from '../layout/Navbar';
 import './style.css';
 
 class Dashboard extends Component {
@@ -16,7 +16,7 @@ class Dashboard extends Component {
 		return (
 			<div className="main">
 				<header>
-					<Navbar2 />
+					<Navbar />
 				</header>
 				<div style={{ height: '75vh' }} className="container valign-wrapper">
 					<div className="row">
