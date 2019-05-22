@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Navbar2 from '../layout/Navbar2';
-import Jumbotron from '../jumbotron/jumbotron';
 import api from '../../utils/api';
+// import Jumbotron from '../jumbotron/jumbotron';
+import Card from '../Card/Card';
+import SightWords from '../SightWords/SightWords';
+// import { Col, Row, Container } from '../components/Grid';
+import { List } from '../List/List';
 
 class TestPage extends Component {
 	onLogoutClick = (e) => {
 		e.preventDefault();
 		this.props.logoutUser();
 	};
+
 	state = {
-		sightWords: [],
-		section: '',
-		userWords: [],
-		listName: []
+		SightWords: [],
+		section: ''
 	};
 
 	componentDidMount() {
@@ -28,7 +31,7 @@ class TestPage extends Component {
 			.getSightWords()
 			.then((res) =>
 				this.setState({
-					sightWords: res.data
+					SightWords: res.data
 				})
 			)
 			.catch((err) => console.log(err));
@@ -46,32 +49,31 @@ class TestPage extends Component {
 						<div className="col s12 center-align">
 							<h4>TestPage Page</h4>
 							<h4>{user.name.split(' ')[0]} please choose an option from below.</h4>
-							<div>
-								<Link
-									to="/TestPage"
-									style={{
-										width: '250px',
-										borderRadius: '3px',
-										letterSpacing: '1.5px'
-									}}
-									className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-								>
-									Go To Test
-								</Link>
-							</div>
-							<button
-								style={{
-									width: '150px',
-									borderRadius: '3px',
-									letterSpacing: '1.5px',
-									marginTop: '5rem'
-								}}
-								onClick={this.onLogoutClick}
-								className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-							>
-								Logout
-							</button>
+
+							<Card title="SightWords" icon="download">
+								{this.state.SightWords.length ? (
+									<List>
+										{this.state.SightWords.map((SightWords) => (
+											<SightWords SightWords={SightWords.words} />
+										))}
+									</List>
+								) : (
+									<h2 className="text-center">No Words to Display</h2>
+								)}
+							</Card>
 						</div>
+						<button
+							style={{
+								width: '150px',
+								borderRadius: '3px',
+								letterSpacing: '1.5px',
+								marginTop: '5rem'
+							}}
+							onClick={this.onLogoutClick}
+							className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+						>
+							Logout
+						</button>
 					</div>
 				</div>
 			</div>
