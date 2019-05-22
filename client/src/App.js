@@ -12,7 +12,7 @@ import About from './components/About/about';
 import Results from './components/results/results';
 import PrivateRoute from './components/private-route/PrivateRoute';
 import Dashboard from './components/dashboard/Dashboard';
-import TestPage from './components/TestPage/testPage';
+import TestPage from './components/TestPage/TestPage';
 import TestResults from './components/TestResults/testResults';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { Provider } from 'react-redux';
@@ -50,10 +50,10 @@ class App extends Component {
 							<PrivateRoute exact path="/dashboard" component={Dashboard} />
 							<PrivateRoute exact path="/questions" component={Questions} />
 							<PrivateRoute exact path="/results" component={Results} />
-							<PrivateRoute exact path="/contact" componenet={Contact} />
-							<PrivateRoute exact path="/about" componenet={About} />
-							<PrivateRoute exact path="/testPage" componenet={TestPage} />
-							<PrivateRoute exact path="/testResults" componenet={TestResults} />
+							<PrivateRoute exact path="/contact" component={Contact} />
+							<PrivateRoute exact path="/about" component={About} />
+							<PrivateRoute exact path="/TestPage" component={TestPage} />
+							<PrivateRoute exact path="/testResults" component={TestResults} />
 						</Switch>
 					</div>
 				</Router>
