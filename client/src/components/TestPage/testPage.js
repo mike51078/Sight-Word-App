@@ -10,6 +10,7 @@ import Card from '../Card/Card';
 // import SightWords from '../SightWords/SightWords';
 // import { Col, Row, Container } from '../components/Grid';
 import { List } from '../List/List';
+import './TestPage.css';
 
 class TestPage extends Component {
 	onLogoutClick = (e) => {
@@ -35,12 +36,14 @@ class TestPage extends Component {
 				})
 			)
 			.catch((err) => console.log(err));
+
+		console.log(this.state.SightWords);
 	};
 
 	render() {
 		const { user } = this.props.auth;
 		return (
-			<div>
+			<div className="main">
 				<header>
 					<Navbar2 />
 				</header>

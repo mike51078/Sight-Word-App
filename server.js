@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const path = require('path');
 const users = require('./routes/api/users');
-const SightWordsRoute = require('./routes/api/SightWords');
-const UserWordsRoute = require('./routes/api/UserWords');
+const SightWords = require('./routes/api/SightWords');
+const UserWords = require('./routes/api/UserWords');
 
 const port = process.env.PORT || 5000;
 const db = require('./config/keys').mongoURI;
@@ -33,8 +33,8 @@ require('./config/passport')(passport);
 
 // Routes
 app.use('/api/users', users);
-app.use('/api/SightWords', SightWordsRoute);
-app.use('/api/UserWords', UserWordsRoute);
+app.use('/api/SightWords', SightWords);
+app.use('/api/UserWords', UserWords);
 
 //Server Static assests if we're in production
 if (process.env.NODE_ENV === 'production') {

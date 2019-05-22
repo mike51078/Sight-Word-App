@@ -5,6 +5,7 @@ import { loginUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Navbar from '../layout/Navbar';
+import './style.css';
 
 class Login extends Component {
 	constructor() {
@@ -51,7 +52,7 @@ class Login extends Component {
 	render() {
 		const { errors } = this.state;
 		return (
-			<div>
+			<div className="main">
 				<header>
 					<Navbar />
 				</header>

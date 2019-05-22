@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
 import Navbar2 from '../layout/Navbar2';
+import './results.css';
 
 class Results extends Component {
 	onLogoutClick = (e) => {
@@ -12,7 +13,7 @@ class Results extends Component {
 	render() {
 		const { user } = this.props.auth;
 		return (
-			<div>
+			<div className="main">
 				<header>
 					<Navbar2 />
 				</header>

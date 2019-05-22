@@ -4,6 +4,7 @@ import { logoutUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Navbar2 from '../layout/Navbar2';
+import './testResults.css';
 
 class TestResults extends Component {
 	onLogoutClick = (e) => {

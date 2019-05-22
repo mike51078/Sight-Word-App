@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Navbar2 from '../layout/Navbar2';
+import Navbar from '../layout/Navbar';
+import './style.css';
 
 class Register extends Component {
 	constructor() {
@@ -52,9 +53,9 @@ class Register extends Component {
 		const { errors } = this.state;
 
 		return (
-			<div>
+			<div className="main">
 				<header>
-					<Navbar2 />
+					<Navbar />
 				</header>
 				<div className="container">
 					<div className="row">

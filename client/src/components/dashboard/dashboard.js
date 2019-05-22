@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { Link } from 'react-router-dom';
 import Navbar2 from '../layout/Navbar2';
+import './style.css';
 
 class Dashboard extends Component {
 	onLogoutClick = (e) => {
@@ -13,7 +14,7 @@ class Dashboard extends Component {
 	render() {
 		const { user } = this.props.auth;
 		return (
-			<div>
+			<div className="main">
 				<header>
 					<Navbar2 />
 				</header>

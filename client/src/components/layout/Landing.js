@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
+import './landing.css';
 
 class Landing extends Component {
 	render() {
 		return (
-			<div>
+			<div className="main">
 				<header>
 					<Navbar />
 				</header>
