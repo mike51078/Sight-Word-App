@@ -12,4 +12,6 @@ const SightWordsSchema = new Schema({
 		required: true
 	}
 });
-module.exports = SightWords = mongoose.model('sightWords', SightWordsSchema);
+
+const SightWords = mongoose.model('sightWords', SightWordsSchema);
+module.exports = SightWords;

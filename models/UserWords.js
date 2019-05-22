@@ -13,4 +13,5 @@ const UserWordsSchema = new Schema({
 	}
 });
 
-module.exports = UserWords = mongoose.model('userWords', UserWordsSchema);
+const UserWords = mongoose.model('UserWords', UserWordsSchema);
+module.exports = UserWords;

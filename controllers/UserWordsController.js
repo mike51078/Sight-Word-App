@@ -1,31 +1,30 @@
-var db = require('../models');
-var mongoose = require('mongoose');
+const db = require('../models');
+const mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
 
 // Defining methods for the User Words Controller
 
 module.exports = {
 	find: function(req, res) {
-		db.userWords.find({ _id: req.params.id }).then(function(userWords) {
-			res.json(userWords);
+		db.UserWords.find({ _id: req.params.id }).then(function(UserWords) {
+			res.json(UserWords);
 		});
 	},
 	create: function(req, res) {
-		db.userWords
+		db.UserWords
 			.create(req.body)
-			.then((dbuserWords) => res.json(dbuserWords))
+			.then((dbUserWords) => res.json(dbUserWords))
 			.catch((err) => res.status(422).json(err));
 	},
 	update: function(req, res) {
-		db.userWords
-			.findOneAndUpdate({ _id: req.body.userWords.listId }, req.body)
-			.then((dbuserWords) => res.json(dbuserWords))
+		db.UserWords
+			.findOneAndUpdate({ _id: req.body.UserWords.listId }, req.body)
+			.then((dbUserWords) => res.json(dbUserWords))
 			.catch((err) => res.status(422).json(err));
-		console.log(req.body);
 	},
 	remove: function(req, res) {
-		db.userWords.remove({ _id: req.params.id }).then(function(dbuserWords) {
-			res.json(dbuserWords);
+		db.UserWords.remove({ _id: req.params.id }).then(function(dbUserWords) {
+			res.json(dbUserWords);
 		});
 	}
 };

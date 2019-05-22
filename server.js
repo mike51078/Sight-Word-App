@@ -3,10 +3,13 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const path = require('path');
 const users = require('./routes/api/users');
+const SightWordsRoute = require('./routes/api/SightWords');
+const UserWordsRoute = require('./routes/api/UserWords');
+
 const port = process.env.PORT || 5000;
 const db = require('./config/keys').mongoURI;
-// const routes = require('./routes');
 
 // Middleware
 app.use(
@@ -30,5 +33,17 @@ require('./config/passport')(passport);
 
 // Routes
 app.use('/api/users', users);
+app.use('/api/SightWords', SightWordsRoute);
+app.use('/api/UserWords', UserWordsRoute);
+
+//Server Static assests if we're in production
+if (process.env.NODE_ENV === 'production') {
+	//set static folder
+	app.use(express.static('client/build'));
+
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	});
+}
 
 app.listen(port, () => console.log(`Server running on port ${port} !`));

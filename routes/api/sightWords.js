@@ -1,8 +1,9 @@
-const express = require('express');
-const Router = express.Router();
-let SightWords = require('../../models/SightWords');
-const sightWordsController = require('../../controllers/sightWordsController');
+const router = require('express').Router();
+const SightWordsController = require('../../controllers/sightWordsController');
 
-router.route('/:id').get(sightWordsController.find);
+router.route('/').post(SightWordsController.update);
+router.route('/:id').get(SightWordsController.find);
+router.post('/:id', SightWordsController.update);
+router.delete('/:id', SightWordsController.remove);
 
-module.exports = Router;
+module.exports = router;

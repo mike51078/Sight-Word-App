@@ -1,13 +1,11 @@
 const path = require('path');
 const router = require('express').Router();
-const SightWordsRoutes = require('./sightWords');
-const UserWordsRoutes = require('./userWords');
+const apiRoutes = require('./api');
+mongoURI = 'mongodb://localhost/test';
+mongoose.connect(process.env.MONGOLAB_URI || mongoURI);
 
-// Sight Words routes
-router.use('/sightWords', SightWordsRoutes);
-
-// User Words Routes
-router.use('/userWords', UserWordsRoutes);
+// API Routes
+router.use('/api', apiRoutes);
 
 // For anything else, render the html page
 router.use(function(req, res) {
