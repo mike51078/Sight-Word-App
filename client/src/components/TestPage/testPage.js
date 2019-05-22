@@ -7,7 +7,7 @@ import Navbar2 from '../layout/Navbar2';
 import api from '../../utils/api';
 // import Jumbotron from '../jumbotron/jumbotron';
 import Card from '../Card/Card';
-import SightWords from '../SightWords/SightWords';
+// import SightWords from '../SightWords/SightWords';
 // import { Col, Row, Container } from '../components/Grid';
 import { List } from '../List/List';
 

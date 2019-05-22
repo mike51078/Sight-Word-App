@@ -5,10 +5,17 @@ mongoose.set('useFindAndModify', false);
 // Defining methods for the SightWordController
 
 module.exports = {
-	find: function(req, res) {
-		db.SightWords.find().then(function(SightWords) {
-			res.json(SightWords);
-		});
+	findAll: function(req, res) {
+		db.SightWords
+			.find(req.query)
+			.then((dbSightWords) => res.json(dbSightWords))
+			.catch((err) => res.status(422).json(err));
+	},
+	findById: function(req, res) {
+		db.SightWords
+			.find(req.query)
+			.then((dbSightWords) => res.json(dbSightWords))
+			.catch((err) => res.status(422).json(err));
 	},
 	create: function(req, res) {
 		db.SightWords
@@ -23,8 +30,10 @@ module.exports = {
 			.catch((err) => res.status(422).json(err));
 	},
 	remove: function(req, res) {
-		db.SightWords.remove({ _id: req.params.id }).then(function(dbSightWords) {
-			res.json(dbSightWords);
-		});
+		db.SightWords
+			.remove({ _id: req.params.id })
+			.then((dbSightWords) => dbSightWords.remove())
+			.then((dbSightWords) => res.json(dbSightWords))
+			.catch((err) => res.status(422).json(err));
 	}
 };
